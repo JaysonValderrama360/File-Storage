@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>All Files</title>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th >ID</th>
+                    <th >File Name</th>
+                    <th >Date Recieved</th>
+                    <th >Status</th>
+                    <th >Protocol</th>
+                    <th >Notes</th>
+                    <th >Last Touched</th>
+                    <th >File</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {%for d in data %}
+
+                  <tr>
+                    <th>{{forloop.counter}}</th>
+                    <th>{{d.file_name}}</th>
+                    <th>{{d.date_received}}</th>
+                    <th>{{d.status}}</th>
+                    <th>{{d.protocol}}</th>
+                    <th>{{d.notes}}</th>
+                    <th>{{d.last_touched}}</th>
+                    <th><a href="{{d.file.url}}">{{d.file}}</a></th>
+
+
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+
+        </div>
+
+    </div>
+</div>
+    
+</body>
+</html>
